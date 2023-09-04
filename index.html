@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone hunting api</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <header>
+    <h2 class="text-6xl">Hunting Phone</h2>
+  </header>
+  <main>
+    <!-- search result section -->
+    <section class="bg-gray-100 m-4 p-4">
+      <input id="input-field" type="text" placeholder="Type to search" class="input input-bordered w-full max-w-xs">
+      <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+    </section>
+
+    <!-- loading spinner -->
+    <div id="loading-spinner" class="text-center my-40 hidden">
+      <span class="loading loading-spinner loading-lg"></span>
+    </div>
+
+    <section>
+      <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+        <!-- <div class="card w-96 bg-gray-100 shadow-xl m-10">
+          <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">Shoes!</h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div class="card-actions justify-center">
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <div onclick="showAll()" id="show-all-btn" class="hidden flex justify-center">
+        <button class="btn btn-accent">Show ALL</button>
+      </div>
+    </section>
+
+    <!-- show details modal -->
+    <!-- Open the modal using ID.showModal() method -->
+
+    <dialog id="show_details" class="modal modal-bottom sm:modal-middle">
+      <form method="dialog" class="modal-box">
+        <div id="show-img" class="flex justify-center m-4 p-4">
+
+        </div>
+        <h3 id="show-det-phn-nm" class="font-bold text-3xl"></h3>
+        <div id="show-discrip" class="gap-8">
+
+        </div>
+
+        <div class="modal-action">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn">Close</button>
+        </div>
+      </form>
+    </dialog>
+
+  </main>
+  <script src="./js/hunt.js"></script>
+</body>
+
+</html>
